@@ -12,6 +12,7 @@ function generatePassword() {
     const includeUpperCase = document.getElementById('uppercase').checked;
     const includeNumbers = document.getElementById('number').checked;
     const includeSymbols = document.getElementById('symbol').checked;
+    const includeLowerCase = document.getElementById('lowercase').checked;
     const passwordLength = parseInt(document.getElementById('passwordLength').value);
 
 
@@ -23,6 +24,9 @@ function generatePassword() {
     }
     if (includeSymbols) {
         characterPool += symbols;
+    }
+    if(includeLowerCase) {
+        characterPool += lowerCaseLetters;
     }
     if (characterPool === '') {
         alert('Please select at least one character type.');
